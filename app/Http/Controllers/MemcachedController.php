@@ -9,6 +9,7 @@ class MemcachedController extends Controller
 {
     public function index(Request $request)
     {
+        header('Content-Type: text/plain; charset=UTF-8');
         $newrelic_enabled = 0;
         if (function_exists('newrelic_set_appname')) {
             newrelic_set_appname("php-memc-bench");

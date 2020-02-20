@@ -54,20 +54,50 @@ return [
 
         'memcached' => [
             'driver' => 'memcached',
-            'persistent_id' => env('MEMCACHED_PERSISTENT_ID'),
-            'sasl' => [
+            'persistent_id' => env('MEMCACHED_PERSISTENT_ID', 'memcached'),
+            /* 'sasl' => [
                 env('MEMCACHED_USERNAME'),
                 env('MEMCACHED_PASSWORD'),
-            ],
+            ], */
             'options' => [
-                // Memcached::OPT_CONNECT_TIMEOUT => 2000,
+                Memcached::OPT_DISTRIBUTION => Memcached::DISTRIBUTION_CONSISTENT,
+                Memcached::OPT_LIBKETAMA_COMPATIBLE => true,
+                //Memcached::OPT_SERIALIZER => Memcached::SERIALIZER_IGBINARY,
+                //Memcached::OPT_BINARY_PROTOCOL => true,
             ],
             'servers' => [
                 [
-                    'host' => env('MEMCACHED_HOST', '127.0.0.1'),
+                    'host' => env('MEMCACHED_HOST', 'memcached'),
                     'port' => env('MEMCACHED_PORT', 11211),
                     'weight' => 100,
                 ],
+            ],
+        ],
+
+        'ememcached' => [
+            'driver' => 'ememcached',
+            'persistent_id' => env('MEMCACHED_PERSISTENT_ID', 'memcached'),
+            /* 'sasl' => [
+                env('MEMCACHED_USERNAME'),
+                env('MEMCACHED_PASSWORD'),
+            ], */
+            'options' => [
+                Memcached::OPT_DISTRIBUTION => Memcached::DISTRIBUTION_CONSISTENT,
+                Memcached::OPT_LIBKETAMA_COMPATIBLE => true,
+                //Memcached::OPT_SERIALIZER => Memcached::SERIALIZER_IGBINARY,
+                //Memcached::OPT_BINARY_PROTOCOL => true,
+            ],
+            'servers' => [
+                [
+                    'host' => env('MEMCACHED_HOST', 'memcached'),
+                    'port' => env('MEMCACHED_PORT', 11211),
+                    'weight' => 100,
+                ],
+                /*[
+                    'host' => env('MEMCACHED_HOST', "192.168.0.1"),
+                    'port' => env('MEMCACHED_PORT', 11211),
+                    'weight' => 100,
+                ],*/
             ],
         ],
 

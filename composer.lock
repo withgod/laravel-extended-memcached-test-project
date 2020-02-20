@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3bb4dacacf43532a01bf1d3d6dd3bbe1",
+    "content-hash": "fdc4ff2a8be2dbd63b9a0ad3b0cf4224",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -2994,6 +2994,53 @@
                 "environment"
             ],
             "time": "2019-09-10T21:37:39+00:00"
+        },
+        {
+            "name": "withgod/laravel-extended-memcachedstore",
+            "version": "0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/withgod/laravel-extended-memcachedstore.git",
+                "reference": "89ec538f4858f41e43219f8b7b83f64f93253872"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/withgod/laravel-extended-memcachedstore/zipball/89ec538f4858f41e43219f8b7b83f64f93253872",
+                "reference": "89ec538f4858f41e43219f8b7b83f64f93253872",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^6.9",
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Withgod\\EMemcachedStore\\Providers\\EMemcachedServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Withgod\\EMemcachedStore\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "withgod",
+                    "email": "noname@withgod.jp"
+                }
+            ],
+            "description": "extended memcached store.",
+            "time": "2020-02-20T12:51:24+00:00"
         }
     ],
     "packages-dev": [
@@ -4984,7 +5031,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "withgod/laravel-extended-memcachedstore": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
